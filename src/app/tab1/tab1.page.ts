@@ -38,6 +38,7 @@ export class Tab1Page implements OnInit {
       }        
     });
   }
+
   ingresarMarcador(lat, lng, title, description){
     const nuevoMarcador = new Marcador(lat, lng, title, description);
     this.marcadores.push(nuevoMarcador);
@@ -59,7 +60,7 @@ export class Tab1Page implements OnInit {
   agregarMarcador(evento){
     this.ingresarMarcador(parseFloat(evento.coords.lat), parseFloat(evento.coords.lng), evento.coords.title, evento.coords.description);
     //Almacenamiento en local storage
-    this.storage.set('marker', JSON.stringify(this.marcadores) );
+    //this.storage.set('marker', JSON.stringify(this.marcadores) );
     console.log(this.marcadores.length);
     //Creación del polígono
      if(this.marcadores.length>=3){
